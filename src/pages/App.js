@@ -3,6 +3,7 @@ import gitLogo from '../assets/logo_github_icon.png';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import ItemRepo from '../components/ItemRepo';
+import Title from '../components/Title';
 import {api} from '../services/api';
 
 import {Container} from './styles'
@@ -44,6 +45,7 @@ const App = () => {
   return (
     <Container>
       <img src={gitLogo} width={72} height={72} alt="github logo" />
+      <Title/>
     <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)}/>
     <Button onClick={handleSearchRepo}/>
     {repos.map(repo => <ItemRepo handleRemoveRepo={handleRemoveRepo} repo={repo}/>)}
